@@ -26,14 +26,14 @@ with open("README.md") as fh:
     )
 
 setup(
-    name="django-session-timeout",
-    version="0.1.0",
+    name="django-session-timeout-joinup",
+    version="1.0.0",
     description="Middleware to expire sessions after specific amount of time",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/LabD/django-session-timeout",
-    author="Lab Digital",
-    author_email="opensource@labdigital.nl",
+    url="https://github.com/we-are-Joinup/django-session-timeout",
+    author="Joinup",
+    author_email="desarrollo@joinup.es",
     install_requires=["Django>=1.11", "six>=1.12"],
     tests_require=tests_require,
     extras_require={"docs": docs_require, "test": tests_require},

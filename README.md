@@ -12,7 +12,7 @@ Add timestamp to sessions to expire them independently
 ## Installation
 
 ```shell
-pip install django-session-timeout
+pip install django-session-timeout-joinup
 ```
 
 ## Usage
@@ -28,25 +28,23 @@ MIDDLEWARE_CLASSES = [
 ]
 ```
 
-And also add the ``SESSION_EXPIRE_SECONDS``:
+And also add the ``SESSION_EXPIRE_MAXIMUM_SECONDS``:
 
+```python
+SESSION_EXPIRE_MAXIMUM_SECONDS = 28800  # 8 hours
+```
+
+By default, the session will expire X seconds since the user do login.
 
 ```python
 SESSION_EXPIRE_SECONDS = 3600  # 1 hour
 ```
 
-By default, the session will expire X seconds after the start of the session.
-To expire the session X seconds after the `last activity`, use the following setting:
+The session will expire X seconds after the start of the session or renew it.
+To renew the session X seconds after expire, use the following setting:
 
 ```python
-SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
-```
-
-By default, `last activiy` will be grouped per second.
-To group by different period use the following setting:
-
-```python
-SESSION_EXPIRE_AFTER_LAST_ACTIVITY_GRACE_PERIOD = 60 # group by minute
+SESSION_EXPIRE_AFTER_LAST_ACTIVITY_GRACE_PERIOD = 1800  # 30 minutes
 ```
 
 To redirect to a custom URL define the following setting:
